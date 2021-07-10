@@ -13,18 +13,3 @@ app.use(loginRoutes_1.router);
 app.listen(3000, function () {
     console.log('Listening on port 3000');
 });
-var Server = /** @class */ (function () {
-    function Server() {
-        this.app = express_1.default();
-        this.app.use(express_1.default.urlencoded({ extended: true }));
-        this.app.use(cookie_session_1.default({ keys: ['asfadsfadfs'] }));
-        this.app.use(loginRoutes_1.router);
-    }
-    Server.prototype.start = function () {
-        this.app.listen(3000, function () {
-            console.log('Listening on port 3000');
-        });
-    };
-    return Server;
-}());
-new Server().start();
