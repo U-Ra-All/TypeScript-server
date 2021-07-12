@@ -12,18 +12,6 @@ function requireAuth(req, res, next) {
 }
 var router = express_1.Router();
 exports.router = router;
-router.post('/login', function (req, res) {
-    var _a = req.body, email = _a.email, password = _a.password;
-    if (email && password && email === 'myemail@gmail.com' && password === 'password') {
-        // Show that the user is logged in
-        req.session = { loggedIn: true };
-        // Redirect to the root route
-        res.redirect('/');
-    }
-    else {
-        res.send('Invalid email or password');
-    }
-});
 router.get('/', function (req, res) {
     // req.session
     if (req.session && req.session.loggedIn) {
