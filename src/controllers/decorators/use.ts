@@ -7,8 +7,8 @@ export function use(middleware: RequestHandler) {
     const middlewares = Reflect.getMetadata(MetadataKeys.middleware, target, key) || [];
 
     // middlewares.push(middleware);
-    // Reflect.defineMetadata(MetadataKeys.middleware, middlewares, target, key);
+    // Reflect.defineMetadata(MetadataKeys.middleware, middleware, target, key);
 
-    Reflect.defineMetadata(MetadataKeys.middleware, [...middlewares, middlewares], target, key);
+    Reflect.defineMetadata(MetadataKeys.middleware, [...middlewares, middleware], target, key);
   };
 }

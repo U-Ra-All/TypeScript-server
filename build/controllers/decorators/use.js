@@ -12,8 +12,8 @@ function use(middleware) {
     return function (target, key, desc) {
         var middlewares = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.middleware, target, key) || [];
         // middlewares.push(middleware);
-        // Reflect.defineMetadata(MetadataKeys.middleware, middlewares, target, key);
-        Reflect.defineMetadata(MetadataKeys_1.MetadataKeys.middleware, __spreadArray(__spreadArray([], middlewares), [middlewares]), target, key);
+        // Reflect.defineMetadata(MetadataKeys.middleware, middleware, target, key);
+        Reflect.defineMetadata(MetadataKeys_1.MetadataKeys.middleware, __spreadArray(__spreadArray([], middlewares), [middleware]), target, key);
     };
 }
 exports.use = use;
